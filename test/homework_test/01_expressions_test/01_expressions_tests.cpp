@@ -16,4 +16,5 @@ TEST_CASE("Verify multiply_numbers function")
 {
 	REQUIRE(multiply_numbers(10, 10) == 100);
 	REQUIRE(multiply_numbers(10, 20) == 200);
+	REQUIRE(multiply_numbers(10, 30) == 300);
 }
