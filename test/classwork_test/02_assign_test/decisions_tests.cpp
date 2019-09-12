@@ -13,4 +13,3 @@ TEST_CASE("Test gross pay function")
 	REQUIRE(gross_pay(50, 10) == 550);
 	REQUIRE(gross_pay(50, 10) == 550);
 }
-}
