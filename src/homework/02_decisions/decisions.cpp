@@ -1,6 +1,8 @@
 #include "decisions.h"
+#include <string>
 //write include statement for decisions header
 
+using std::string;
 //Write code for function get_grade_points that accepts a string letter_grade and returns 
 //the grade_points for as follows:
 //given grade "A" returns 4
@@ -53,3 +55,42 @@ double calculate_gpa(int credit_hours, double credit_points)
 	}
 }
 
+string get_letter_grade_using_if(int number_grade)
+{
+	if (number_grade >= 90) {
+		return "A";
+	}
+	else if (number_grade >= 80 && number_grade < 90) {
+		return "B";
+	}
+	else if (number_grade >= 70 && number_grade < 80) {
+		return "C";
+	}
+	else if (number_grade >= 60 && number_grade < 70) {
+		return "D";
+	}
+	else {
+		return "F";
+	}
+}
+
+string get_letter_grade_using_switch(int number_grade)
+{
+	int case_number = 0;
+	case_number = (number_grade / 10);
+	switch (case_number)
+	{
+	case 10:
+		return "A";
+	case 9:
+		return "A";
+	case 8:
+		return "B";
+	case 7:
+		return "C";
+	case 6:
+		return "D";
+	default:
+		return "F";
+	}
+}
