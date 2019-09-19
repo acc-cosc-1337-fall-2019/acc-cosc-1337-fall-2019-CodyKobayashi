@@ -28,7 +28,24 @@ e
 s
 t
 */
+void loop_string_w_auto(std::string str)
+{
+	//not modifiable
+	//creates a copy of the given string, non-destructive
+	for (auto ch : str)
+	{
+		ch = 'j';
+		std::cout << ch << "/n";
+	}
 
+	//modifiable
+	//references and changes the original string
+	for (auto &ch : str)
+	{
+		ch = 'j';
+		std::cout << ch << "/n";
+	}
+}
 
 void loop_vector_w_index() 
 {
