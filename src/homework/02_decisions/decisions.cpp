@@ -69,8 +69,11 @@ string get_letter_grade_using_if(int number_grade)
 	else if (number_grade >= 60 && number_grade < 70) {
 		return "D";
 	}
-	else {
+	else if(number_grade > 0)	{
 		return "F";
+	}
+	else 	{
+		return "Invalid";
 	}
 }
 
@@ -81,7 +84,6 @@ string get_letter_grade_using_switch(int number_grade)
 	switch (case_number)
 	{
 	case 10:
-		return "A";
 	case 9:
 		return "A";
 	case 8:
@@ -90,7 +92,14 @@ string get_letter_grade_using_switch(int number_grade)
 		return "C";
 	case 6:
 		return "D";
-	default:
+	case 5:
+	case 4:
+	case 3:
+	case 2:
+	case 1:
+	case 0:
 		return "F";
+	default:
+		return "Invalid";
 	}
 }
