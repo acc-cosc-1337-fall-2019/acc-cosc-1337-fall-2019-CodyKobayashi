@@ -17,7 +17,7 @@ user enters a y or Y.
 int main() 
 {
 	string dna = "";
-	string contin = "y";
+	char contin = 'y';
 	double gc_content = 0.0;
 	string dna_complement = "";
 	int user_choice = 0;
@@ -56,7 +56,7 @@ int main()
 
 		cout << "Do you wish to continue? Y/N:";
 		cin >> contin;
-	} while (contin == "y" || contin == "Y");
+	} while (contin == 'y' || contin == 'Y');
 
 	return 0;
 }
