@@ -1,15 +1,16 @@
 
+
 #include "bank_account.h"
 //bank_account.cpp
 
-// Constructor
-BankAccount::BankAccount()
+
+BankAccount::BankAccount() //Object constructor
 {
 	// Basically the default value
 	balance = 500;
 }
 
-int BankAccount::get_balance()
+int BankAccount::get_balance() const
 {
 	return balance;
 }
@@ -21,5 +22,13 @@ void BankAccount::deposit(int amount)
 	{
 		balance = balance + amount;
 		// or balance += amount;
+	}
+}
+
+void BankAccount::withdraw(int amount)
+{
+	if (balance > amount)
+	{
+		balance -= amount;
 	}
 }
