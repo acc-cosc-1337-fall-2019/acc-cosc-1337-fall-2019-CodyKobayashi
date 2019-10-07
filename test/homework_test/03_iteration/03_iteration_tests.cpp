@@ -8,12 +8,16 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 TEST_CASE("Test reverse_dna") {
 	REQUIRE(get_reverse_string("AGCTATAG") == "GATATCGA");
+	REQUIRE(get_reverse_string("CGCTATAG") == "GATATCGC");
 }
 
 TEST_CASE("Number of G's and C's test") {
 	REQUIRE(get_gc_content("AGCTATAG") == 0.375);
+	REQUIRE(get_gc_content("CGCTATAG") == 0.5);
 }
 
 TEST_CASE("get_dna_complement Test") {
 	REQUIRE(get_dna_complement("AAAACCCGGT") == "ACCGGGTTTT");
+	REQUIRE(get_dna_complement("CCCGGAAAAT") == "ATTTTCCGGG");
+
 }
