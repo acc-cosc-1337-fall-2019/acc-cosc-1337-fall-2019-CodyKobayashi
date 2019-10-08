@@ -1,27 +1,26 @@
-#include "bank_account.h"
 #include<iostream>
 #include<vector>
+#include "atm.h"
+#include "bank_account.h"
 
 using std::cout;
 using std::vector;
 
 int main()
 {
-	//BankAccount account;
-	//account.deposit(5);
-	//cout << account.get_balance();
+	//Real world: scan card enter pin
+	//Get customer record from database into a vector
+	vector<BankAccount> accounts{ BankAccount(500), BankAccount(600),
+	BankAccount(1000) };
 
-	vector<BankAccount> accounts;
-	BankAccount b1;
-	accounts.push_back(b1);
-	accounts.push_back(BankAccount(750));
-	accounts.push_back(BankAccount(850));
-	accounts.push_back(BankAccount(1750));
+	ATM atm(accounts[0]);
+	ATM atm2(accounts[1]);
+	atm.deposit(100);
+	atm.withdraw(50);
+
+	atm.display_balance();
+	atm2.display_balance();
+
 	
-	for (auto account : accounts)
-	{
-		cout << "Balance: " << account.get_balance() << "\n";
-	}
-
 	return 0;
 }

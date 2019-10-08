@@ -7,13 +7,13 @@ has one public function area that returns the area of the rectangle, and one pri
 that calculates area of the rectangle.  The class has 3 int private variables area, width, and height.
 */
 
-int RectangleArea::get_area() const // Returns area as a constant
+int acc::Rectangle::get_area() const // Returns area as a constant
 {
 	return area;
 }
 
 
-void RectangleArea::calculate_area() // Calculates the area duh
+void acc::Rectangle::calculate_area() // Calculates the area duh
 {
 	area = width * height;
 }

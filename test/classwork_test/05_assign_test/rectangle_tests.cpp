@@ -8,8 +8,8 @@ TEST_CASE("Verify Test Configuration", "verification") {
 }
 
 TEST_CASE("Test Rectangle") {
-	RectangleArea r1(4, 5);
-	RectangleArea r2(10, 10);
+	acc::Rectangle r1(4, 5);
+	acc::Rectangle r2(10, 10);
 	REQUIRE(r1.get_area() == 20);
 	REQUIRE(r2.get_area() == 100);
 }

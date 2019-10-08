@@ -18,10 +18,10 @@ Iterate the vector and display the Area for each Rectangle on one line and the t
 */
 int main()
 {
-	vector<RectangleArea> Rectangless;
-	Rectangless.push_back(RectangleArea(4, 5));
-	Rectangless.push_back(RectangleArea(10, 10));
-	Rectangless.push_back(RectangleArea(100, 10));
+	vector<acc::Rectangle> Rectangless;
+	Rectangless.push_back(acc::Rectangle(4, 5));
+	Rectangless.push_back(acc::Rectangle(10, 10));
+	Rectangless.push_back(acc::Rectangle(100, 10));
 
 	for (auto rec : Rectangless)
 	{
