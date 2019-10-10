@@ -23,9 +23,16 @@ int main()
 	Rectangless.push_back(acc::Rectangle(10, 10));
 	Rectangless.push_back(acc::Rectangle(100, 10));
 
+	/*
 	for (auto rec : Rectangless)
 	{
 		cout << "Rectangle Area: " << rec.get_area() << "\n";
+	}
+	*/
+
+	for (auto rec : Rectangless)
+	{
+		cout << rec;
 	}
 
 	return 0;

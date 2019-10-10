@@ -1,6 +1,5 @@
-
-
 #include "bank_account.h"
+
 //bank_account.cpp
 
 
@@ -31,4 +30,29 @@ void BankAccount::withdraw(int amount)
 	{
 		balance -= amount;
 	}
+}
+
+void display(const BankAccount& account)
+{
+	std::cout << "Balance: " << account.balance << "\n";
+
+}
+
+std::ostream & operator<<(std::ostream & out, const BankAccount & b)
+{
+	out << "Balance: " << b.balance << "\n";
+
+	return out;
+}
+
+std::istream & operator >> (std::istream & in, BankAccount & b)
+{
+	int amt;
+	std::cout << "\nEnter Amount: ";
+	in >> amt;
+
+	b.deposit(amt);
+
+	return in;
+	// You'll need this in the tic tac toe game
 }

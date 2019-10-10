@@ -17,3 +17,11 @@ void acc::Rectangle::calculate_area() // Calculates the area duh
 {
 	area = width * height;
 }
+
+std::ostream & acc::operator<<(std::ostream & out, const Rectangle & b)
+{
+
+	out << "Rectangle area (using ostream): " << b.area << "\n";
+
+	return out;
+}

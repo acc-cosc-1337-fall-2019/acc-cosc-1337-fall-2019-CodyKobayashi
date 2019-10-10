@@ -4,7 +4,7 @@
 
 using std::cout;
 
-ATM::ATM(BankAccount a) :account(a)
+ATM::ATM(BankAccount a) :account(a) // copy constructor
 {
 	
 }
