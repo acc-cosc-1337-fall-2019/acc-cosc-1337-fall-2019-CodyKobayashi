@@ -40,27 +40,9 @@ string TicTacToe::get_player() const
 // Remember to iterate the list when displaying, dont get over whemled
 void TicTacToe::display_board()
 {
-	auto count = 0;
-	for (auto x : pegs)
+	for (std::size_t i = 0; i < 9; i += 3) 
 	{
-		count += 1; // Sets the space number where user has not placed an X or O
-		if (x == " ") // Prints a space if an X or O has not been placed 
-		{
-			cout << count;
-		}
-		else
-		{
-			cout << x;
-		}
-
-		if (count % 3 != 0) // Creates verticle seperator
-		{
-			cout << " | ";
-		}
-		if (count % 3 == 0 && count != 9) // creates horizontal seperator
-		{
-			cout << "\n ------- \n";
-		}
+		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
 	}
 }
 
