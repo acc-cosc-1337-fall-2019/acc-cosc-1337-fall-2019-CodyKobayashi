@@ -17,7 +17,7 @@ public:
 	friend std::ostream & operator << (std::ostream & out, const BankAccount & b);
 	friend std::istream & operator >> (std::istream & in,  BankAccount & b);
 
-private:
+protected:
 	int balance;
 
 };
