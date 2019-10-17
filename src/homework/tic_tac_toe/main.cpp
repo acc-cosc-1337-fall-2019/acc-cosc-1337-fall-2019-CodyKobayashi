@@ -20,16 +20,14 @@ int main()
 		
 		while (!board.game_over())
 		{
-			cout << "\nEnter for: " << board.get_player();
-			cin >> position;
-			board.mark_board(position);
-			board.display_board();
+			cin << board;
+			cout >> board;
 		}
 
 
 		if (board.game_over())
 		{
-			board.display_board();
+			cout >> board;
 			cout << "\nGame over! Would you like to continue? Y/N: ";
 			cin >> contin;
 		}

@@ -37,15 +37,6 @@ string TicTacToe::get_player() const
 	return next_player;
 }
 
-// Remember to iterate the list when displaying, dont get over whemled
-void TicTacToe::display_board()
-{
-	for (std::size_t i = 0; i < 9; i += 3) 
-	{
-		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
-	}
-}
-
 
 void TicTacToe::set_next_player()
 {
@@ -127,4 +118,22 @@ void TicTacToe::clear_board()
 			pegs[i] = " "; //Changes every 1 space to a "space" hur hur... pun
 		}
 	}
+}
+
+std::istream & operator<<(std::istream & in, TicTacToe & board)
+{
+	int pos;
+	cout << "Enter for " << board.get_player() << ": ";
+	in >> pos;
+	board.mark_board(pos);
+	return in;
+}
+
+std::ostream & operator>>(std::ostream & out, TicTacToe & board)
+{
+	for (std::size_t i = 0; i < 9; i += 3)
+	{
+		out << board.pegs[i] << "|" << board.pegs[i + 1] << "|" << board.pegs[i + 2] << "\n";
+	}
+	return out;
 }
