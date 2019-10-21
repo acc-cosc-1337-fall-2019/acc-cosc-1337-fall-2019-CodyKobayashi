@@ -9,18 +9,14 @@ using std::vector;
 
 int main()
 {
-	CheckingAccount a(1500);
-	cout << a;
+	CheckingAccount checking(1500);
+	cout << "Checking get_balance: " << checking.get_balance() << "\n";
 
 	SavingsAccount savings(500);
-	cout << "Calls ostream overload in bank_account.cpp " << savings;
-	cout << "Savings in balance " << savings.get_balance() << "\n";
-	savings.add_interest();
-	cout << savings;
+	cout << "Savings get_balance: " << savings.get_balance() << "\n";
 
-	BankAccount c = a + savings;
-
-	cout << c;
+	BankAccount& account = savings;
+	cout << "Ref to savings get_balance: " << account.get_balance() << "\n";
 
 	return 0;
 }
