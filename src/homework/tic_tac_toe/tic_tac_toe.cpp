@@ -1,14 +1,19 @@
 //cpp
 #include "tic_tac_toe.h"
-#include <iostream>
 
 using std::cout;
 
 bool TicTacToe::game_over()
 {
 	if (check_column_win() || check_row_win() ||
-		check_diagonal_win() || check_board_full())
+		check_diagonal_win())
 	{
+		set_winner();
+		return true;
+	}
+	else if (check_board_full())
+	{
+		winner = "C";
 		return true;
 	}
 	else
@@ -29,12 +34,19 @@ void TicTacToe::start_game(string player)
 void TicTacToe::mark_board(int position)
 {
 	pegs[position - 1] = next_player;
-	set_next_player();
-}
 
+	if (game_over() == false) {
+		set_next_player();
+	}
+}
 string TicTacToe::get_player() const
 {
 	return next_player;
+}
+
+string TicTacToe::get_winner() const
+{
+	return winner;
 }
 
 
@@ -120,7 +132,20 @@ void TicTacToe::clear_board()
 	}
 }
 
-std::istream & operator<<(std::istream & in, TicTacToe & board)
+void TicTacToe::set_winner()
+{
+
+	if (next_player == "X")
+	{
+		winner = "O";
+	}
+	else 
+	{
+		winner = "X";
+	}
+}
+
+std::istream & operator>>(std::istream & in, TicTacToe & board)
 {
 	int pos;
 	cout << "Enter for " << board.get_player() << ": ";
@@ -129,7 +154,7 @@ std::istream & operator<<(std::istream & in, TicTacToe & board)
 	return in;
 }
 
-std::ostream & operator>>(std::ostream & out, TicTacToe & board)
+std::ostream & operator<<(std::ostream & out, TicTacToe & board)
 {
 	for (std::size_t i = 0; i < 9; i += 3)
 	{

@@ -10,7 +10,6 @@ int main()
 	TicTacToe board;
 	string player = "X";
 	string contin = "Y";
-	int position;
 
 	do
 	{
@@ -20,14 +19,14 @@ int main()
 		
 		while (!board.game_over())
 		{
-			cin << board;
-			cout >> board;
+			cin >> board;
+			cout << board;
 		}
 
 
 		if (board.game_over())
 		{
-			cout >> board;
+			cout<< board;
 			cout << "\nGame over! Would you like to continue? Y/N: ";
 			cin >> contin;
 		}
