@@ -55,6 +55,8 @@ TEST_CASE("Test draw by full board")
 	board.mark_board(9); //X   
 	REQUIRE(board.game_over() == true);
 	// board is full, no one wins
+	
+	REQUIRE(board.get_winner() == "C");
 }
 
 
@@ -106,23 +108,26 @@ TEST_CASE("Test for player X winning by [2nd] column")
 	board.mark_board(8); //X
 	REQUIRE(board.game_over() == true);
 	// X should have won!
+
+	REQUIRE(board.get_winner() == "X");
 }
 
-TEST_CASE("Test for player X winning by [3rd] column")
+TEST_CASE("Test for player O winning by [3rd] column")
 {
 	TicTacToe board;
-	board.start_game("X");
-	board.mark_board(3); //X
+	board.start_game("O");
+	board.mark_board(3); //O
 	REQUIRE(board.game_over() == false);
-	board.mark_board(5); //O
+	board.mark_board(5); //X
 	REQUIRE(board.game_over() == false);
-	board.mark_board(6); //X
+	board.mark_board(6); //O
 	REQUIRE(board.game_over() == false);
-	board.mark_board(1); //O
+	board.mark_board(1); //X
 	REQUIRE(board.game_over() == false);
-	board.mark_board(9); //X
+	board.mark_board(9); //O
 	REQUIRE(board.game_over() == true);
-	// X should have won!
+	// O should have won!
+	REQUIRE(board.get_winner() == "O");
 }
 
 TEST_CASE("Test for player X winning by [1st] row")

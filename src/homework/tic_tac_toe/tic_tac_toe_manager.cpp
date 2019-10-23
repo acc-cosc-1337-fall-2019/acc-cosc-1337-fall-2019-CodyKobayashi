@@ -4,12 +4,12 @@
 
 ostream & operator<<(ostream & out, const TicTacToeManager & m)
 {
-	/**/
+	
 	for (auto game : m.games)
 	{
 		out << game <<"\n";
 	}
-	/**/
+	
 	out << "X wins: " << m.x_wins << "\n";
 	out << "O wins: " << m.o_wins << "\n";
 	out << "Ties: " << m.ties << "\n";
