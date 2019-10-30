@@ -14,7 +14,7 @@ int main()
 	Shape* line = new Line();//creates dynamic memory (heap)
 	line->draw();
 	delete line;
-
+	
 	//vector of Shape pointers
 	std::vector<Shape*> shapes{new Line(), new Circle()};
 
@@ -41,10 +41,17 @@ int main()
 	shaps.push_back(std::make_unique< Line >());
 	shaps.push_back(std::make_unique< Circle >());
 
-	for (auto & shape : shaps)
+	for (auto & shape : shapes)
 	{
 		shape->draw();
 	}
+	
+
+
+	//std::unique_ptr < Shape > line = std::make_unique< Line >();
+	//line->draw();
+
+
 
 	return 0;
 }
