@@ -25,11 +25,11 @@ int main()
 
 		if (game_type == 3)
 		{
-			board = new TicTacToe3;
+			board = new TicTacToe3();
 		}
 		else
 		{
-			board = new TicTacToe4;
+			board = new TicTacToe4();
 		}
 
 
