@@ -61,46 +61,16 @@ void TicTacToe::set_next_player()
 
 bool TicTacToe::check_column_win()
 {
-	for (std::size_t i = 0; i < 3; i++)
-	{
-		if (pegs[i] == pegs[i + 3] && pegs[i + 3] == pegs[i + 6] 
-			&& pegs[i + 6] != " ")
-		{
-			return true;
-		}
-	}
-
 	return false;
 }
 
 bool TicTacToe::check_row_win()
 {
-	
-	for (std::size_t i = 0; i < 9; i += 3)
-	{
-		if (pegs[i] == pegs[i + 1] && pegs[i + 1] == pegs[i + 2]
-			&& pegs[i + 2] != " ")
-		{
-			return true;
-		}
-	}
-	
 	return false;
 }
 
 bool TicTacToe::check_diagonal_win()
 {
-	
-	if (pegs[0] == pegs[4] && pegs[4] == pegs[8] && pegs[4] != " ")
-	{
-		return true;
-	}
-	if (pegs[2] == pegs[4] && pegs[4] == pegs[6] && pegs[4] != " ")
-	{
-		return true;
-	} 
-	/* I realized that diagonally starting from 0 to 8 it increments by 4, and 2 to 6 it increments by 2
-	   but I felt there is no real reason to have 2 for loops which takes more processing*/
 	return false;
 }
 
@@ -143,7 +113,7 @@ void TicTacToe::set_winner()
 }
 
 std::istream & operator>>(std::istream & in, TicTacToe & board)
-{
+{ // make these work with both TTT
 	int pos;
 	cout << "Enter for " << board.get_player() << ": ";
 	in >> pos;
@@ -152,7 +122,7 @@ std::istream & operator>>(std::istream & in, TicTacToe & board)
 }
 
 std::ostream & operator<<(std::ostream & out, TicTacToe & board)
-{
+{ // make these work with both TTT
 	for (std::size_t i = 0; i < 9; i += 3)
 	{
 		out << board.pegs[i] << "|" << board.pegs[i + 1] << "|" << board.pegs[i + 2] << "\n";

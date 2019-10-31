@@ -1,5 +1,7 @@
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_manager.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 #include<iostream>
 
 using std::cout;
@@ -12,23 +14,37 @@ int main()
 	TicTacToeManager manager;
 	string player = "X";
 	string contin = "Y";
+	int game_type;
 
 	do
 	{
-		TicTacToe board;
+		TicTacToe* board;
 
-		cout << "Will X or O start?: ";
-		board.start_game(player);
-		cin >> player;
-		
-		while (!board.game_over())
+		cout << "Play win by 3 or 4: ";
+		cin >> game_type;
+
+		if (game_type == 3)
 		{
-			cin >> board;
-			cout << board;
+			board = new TicTacToe3;
+		}
+		else
+		{
+			board = new TicTacToe4;
 		}
 
 
-		manager.save_game(board);
+		cout << "Will X or O start?: ";
+		board->start_game(player);
+		cin >> player;
+		
+		while (!board->game_over())
+		{
+			cin >> *board;
+			cout <<*board;
+		}
+
+
+		manager.save_game(*board);
 
 		cout<< board;
 		cout << "\nGame over! Would you like to continue? Y/N: ";
