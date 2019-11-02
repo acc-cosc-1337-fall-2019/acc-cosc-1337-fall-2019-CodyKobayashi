@@ -1,7 +1,7 @@
 #include "line.h"
 //line.cpp
 
-void Line::draw()
-{
+//void Line::draw()
+//{
 
-}
+//}

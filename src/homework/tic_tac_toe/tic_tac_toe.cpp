@@ -11,7 +11,7 @@ bool TicTacToe::game_over()
 		set_winner();
 		return true;
 	}
-	else if (check_board_full())
+	if (check_board_full())
 	{
 		winner = "C";
 		return true;
@@ -36,6 +36,32 @@ void TicTacToe::mark_board(int position)
 	pegs[position - 1] = next_player;
 	set_next_player();
 }
+
+void TicTacToe::display_beginning_board(TicTacToe & board) // Display purposes, should not effect code
+{
+	if (board.pegs.size() == 16)
+	{
+		for (int i = 1; i < 8; i += 4)
+		{
+			std::cout << i << " | " << i + 1 << " | " << i + 2 << " | " << i + 3 << "\n";
+		}
+		for (int i = 9; i < 16; i += 4)
+		{
+			std::cout << i << " |" << i + 1 << " |" << i + 2 << " |" << i + 3 << "\n";
+		}
+	}
+
+	if (board.pegs.size() == 9)
+	{
+		for (int i = 1; i < 9; i += 3)
+		{
+			std::cout << i << "|" << i + 1 << "|" << i + 2 << "\n";
+		}
+	}
+
+}
+
+
 string TicTacToe::get_player() const
 {
 	return next_player;
@@ -123,9 +149,30 @@ std::istream & operator>>(std::istream & in, TicTacToe & board)
 
 std::ostream & operator<<(std::ostream & out, TicTacToe & board)
 { // make these work with both TTT
-	for (std::size_t i = 0; i < 9; i += 3)
+	std::size_t board_size = board.pegs.size();
+
+	if (board_size == 9)
 	{
-		out << board.pegs[i] << "|" << board.pegs[i + 1] << "|" << board.pegs[i + 2] << "\n";
+		for (std::size_t i = 0; i < 9; i += 3)
+		{
+			out << board.pegs[i] << "|" << board.pegs[i + 1] << "|" << board.pegs[i + 2] << "\n";
+		}
+		return out;
 	}
+
+	if (board_size == 16)
+	{
+		for (std::size_t i = 0; i < 16; i += 4)
+		{
+			out << board.pegs[i] << "|" << board.pegs[i + 1] << "|" << board.pegs[i + 2] 
+				<< "|" << board.pegs[i + 3] << "\n";
+		}
+		return out;
+	}
+
+	
+	out << "Something have went terribly wrong/invalid board size";
 	return out;
+
 }
+	

@@ -9,6 +9,11 @@ class TicTacToe4 : public TicTacToe
 {
 public:
 	TicTacToe4() : TicTacToe(4) {} // Sending 4 to the TicTacToe class
+
+private:
+	bool check_column_win() override;
+	bool check_row_win() override;
+	bool check_diagonal_win() override;
 };
 
 #endif // !TIC_TAC_TOE_4

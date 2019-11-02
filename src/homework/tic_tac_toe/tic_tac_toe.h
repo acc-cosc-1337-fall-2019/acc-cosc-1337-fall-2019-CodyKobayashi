@@ -20,6 +20,7 @@ public:
 	bool game_over();
 	void start_game(string player);
 	void mark_board(int position);
+	void display_beginning_board(TicTacToe & board);
 	string get_player() const;
 	string get_winner() const;
 

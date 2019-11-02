@@ -20,22 +20,24 @@ int main()
 	{
 		TicTacToe* board;
 
-		cout << "Play win by 3 or 4: ";
+		cout << "Play window by 3 or 4: ";
 		cin >> game_type;
 
 		if (game_type == 3)
 		{
 			board = new TicTacToe3();
+			board->display_beginning_board(*board); // Display purposes
 		}
 		else
 		{
 			board = new TicTacToe4();
+			board->display_beginning_board(*board); // Display purposes
 		}
 
 
 		cout << "Will X or O start?: ";
-		board->start_game(player);
 		cin >> player;
+		board->start_game(player);
 		
 		while (!board->game_over())
 		{
@@ -46,7 +48,7 @@ int main()
 
 		manager.save_game(*board);
 
-		cout<< board;
+		cout << board;
 		cout << "\nGame over! Would you like to continue? Y/N: ";
 		cin >> contin;
 	
