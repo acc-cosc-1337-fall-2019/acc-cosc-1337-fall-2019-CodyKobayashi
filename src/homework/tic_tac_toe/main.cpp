@@ -46,7 +46,7 @@ int main()
 
 		manager.save_game(*board);
 
-		cout << board;
+		//cout << *board;
 		cout << "\nGame over! Would you like to continue? Y/N: ";
 		cin >> contin;
 	

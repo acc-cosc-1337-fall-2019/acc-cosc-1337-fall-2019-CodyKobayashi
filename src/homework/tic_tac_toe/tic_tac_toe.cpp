@@ -48,7 +48,7 @@ void TicTacToe::display_beginning_board(TicTacToe & board) // Display purposes, 
 		std::cout << "9 | 10| 11 | 12" << "\n";
 		for (int i = 13; i < 16; i += 4)
 		{
-			std::cout << i << " |" << i + 1 << " |" << i + 2 << " |" << i + 3 << " \n";
+			std::cout << i << "| " << i + 1 << "| " << i + 2 << " | " << i + 3 << " \n";
 		}
 	}
 
