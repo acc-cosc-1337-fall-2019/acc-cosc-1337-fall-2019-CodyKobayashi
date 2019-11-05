@@ -26,15 +26,13 @@ int main()
 		if (game_type == 3)
 		{
 			board = new TicTacToe3();
-			board->display_beginning_board(*board); // Display purposes
 		}
 		else
 		{
 			board = new TicTacToe4();
-			board->display_beginning_board(*board); // Display purposes
 		}
 
-
+		board->display_beginning_board(*board); // Display purposes
 		cout << "Will X or O start?: ";
 		cin >> player;
 		board->start_game(player);
