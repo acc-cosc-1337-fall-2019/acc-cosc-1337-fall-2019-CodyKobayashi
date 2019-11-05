@@ -8,7 +8,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-TEST_CASE("Test win by first column", "[X wins first column] 3")
+TEST_CASE("Test win by first column 3", "[X wins first column] 3")
 { 
 	TicTacToe *board;
 	board = new TicTacToe3();
@@ -206,7 +206,8 @@ TEST_CASE("Diagonal win top left 4")
 	// X wins!
 }
 
-TEST_CASE("Diagonal win from bottom to top left 3")
+
+TEST_CASE("Diagonal win from bottom to top left 4")
 {
 	TicTacToe *board;
 	board = new TicTacToe3();
@@ -225,9 +226,9 @@ TEST_CASE("Diagonal win from bottom to top left 3")
 }
 
 
-/*
-TEST_CASE("Test win by first column", "[X wins first column] 4")
-{ 
+
+TEST_CASE("Test win by first column 4", "[X wins first column] 4")
+{
 
 	TicTacToe *board;
 	board = new TicTacToe4();
@@ -247,6 +248,7 @@ TEST_CASE("Test win by first column", "[X wins first column] 4")
 	//X wins 
 	REQUIRE(board->game_over() == true);
 }
+
 
 TEST_CASE("Test draw by full board 4")
 {
@@ -427,7 +429,7 @@ TEST_CASE("Test for player X winning by [3rd] row 4")
 	// X should have won!
 }
 
-TEST_CASE("Diagonal win top left 4")
+TEST_CASE("Diagonal win top left 4 ")
 {
 	TicTacToe *board;
 	board = new TicTacToe4();
@@ -449,7 +451,7 @@ TEST_CASE("Diagonal win top left 4")
 	// X wins!
 }
 
-TEST_CASE("Diagonal win from bottom to top left 4")
+TEST_CASE("Diagonal win from bottom to top left 4 ")
 {
 	TicTacToe *board;
 	board = new TicTacToe4();
@@ -470,4 +472,3 @@ TEST_CASE("Diagonal win from bottom to top left 4")
 	REQUIRE(board->game_over() == true);
 	// X wins!
 }
-*/
