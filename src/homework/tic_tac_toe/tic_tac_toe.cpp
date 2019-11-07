@@ -176,4 +176,8 @@ std::ostream & operator<<(std::ostream & out, TicTacToe & board)
 	return out;
 
 }
-	
+
+const std::vector<std::string>& TicTacToe::get_pegs()
+{
+	return pegs;
+}
