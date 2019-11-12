@@ -34,6 +34,7 @@ private:
 
 	std::unique_ptr<TicTacToeManager> manager;
 	std::unique_ptr<TicTacToe> board;
+	int wins_count; //Self-edit
 };
 
 #endif // !PANEL_H

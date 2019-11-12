@@ -33,9 +33,8 @@ Panel::Panel(wxWindow* parent)
 	int ballocks = 1;
 	for(auto& game : games)
 	{
-		char cballocks = char(ballocks);
+		char cballocks = '1';
 		history_list_box->Append(cballocks);
-		history_list_box->Append("Game ");
 	}
 
 
@@ -227,9 +226,12 @@ void Panel::on_peg_button_click(wxCommandEvent & event)
 
 	if (board->game_over())
 	{
+		wins_count = wins_count += 1; // self-edit
+		char char_wins_count = char(wins_count);
+
 		wxMessageBox(wxT("Winner!"), wxT("TicTacToe"), wxICON_INFORMATION);
-		history_list_box->Append("game");
-		winner_text->SetLabel(board->get_winner());
+		history_list_box->Append(char_wins_count); //self-edit
+		winner_text->SetLabel(board->get_winner()); 
 		start_button->Enable();
 		manager->save_game(std::move(board));
 		set_winner_labels();
