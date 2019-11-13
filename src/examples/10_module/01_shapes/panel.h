@@ -4,9 +4,11 @@
 #include<vector>
 #include<string>
 #include<memory>
-#include "text.h"
-#include "circle.h"
-#include "rectangle.h"
+#include "../10_module/01_lib/text.h"
+#include "../10_module/01_lib/circle.h"
+#include "../10_module/01_lib/rectangle.h"
+
+using mod10ex::Point; using mod10ex::Shape; using mod10ex::Text; using mod10ex::Circle;
 
 class Panel : public wxPanel 
 {

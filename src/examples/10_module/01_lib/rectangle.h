@@ -3,9 +3,9 @@
 #include "shape.h"
 #include "point.h"
 
-namespace acc
+namespace mod10ex
 {
-	class Rectangle : public Shape 
+	class Rectangle : public Shape
 	{
 	public:
 		Rectangle(wxDC* dc, Point p, int w, int h) : Shape(dc), point(p),
@@ -17,7 +17,5 @@ namespace acc
 		int width;
 		int height;
 	};
-
 }
-
 #endif // ! RECTANGLE_H
