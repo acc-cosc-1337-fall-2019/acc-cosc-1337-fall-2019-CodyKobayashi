@@ -52,8 +52,10 @@ Vector& Vector::operator=(Vector&& v) //Move assignment
 
 	return *this;
 }
-
+//template<typename T >
 Vector::~Vector()
 {
 	delete[] nums;
 }
+
+//template class Vector<int>;
