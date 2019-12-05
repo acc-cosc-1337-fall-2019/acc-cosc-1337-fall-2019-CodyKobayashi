@@ -4,7 +4,8 @@
 //create dynamic report, display and clear memory
 int main()
 {
-	
+	MyReport r;
+	r.display();
 
 	return 0;
 }
